@@ -28,11 +28,16 @@ while True:
                 print(f'{task["id"]}. {task["title"]} - {status}')
 
     elif choice == "3":
+    try:
         task_id = int(input("Enter task ID: "))
+
         if manager.complete_task(task_id):
             print("Task completed successfully!")
         else:
-            print("Task not found.")
+            print("Invalid ID, task not found, or task already completed.")
+
+    except ValueError:
+        print("Please enter a valid numeric task ID.")
 
     elif choice == "4":
         task_id = int(input("Enter task ID: "))
