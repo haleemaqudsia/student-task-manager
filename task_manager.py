@@ -1,4 +1,3 @@
-
 class TaskManager:
     def __init__(self):
         self.tasks = []
@@ -11,7 +10,7 @@ class TaskManager:
         task = {
             "id": self.next_id,
             "title": title.strip(),
-            "completed": False
+            "completed": False,
         }
 
         self.tasks.append(task)
@@ -21,21 +20,19 @@ class TaskManager:
     def display_tasks(self):
         return self.tasks
 
-    
     def complete_task(self, task_id):
-    if not isinstance(task_id, int) or task_id <= 0:
+        if not isinstance(task_id, int) or task_id <= 0:
+            return False
+
+        for task in self.tasks:
+            if task["id"] == task_id:
+                if task["completed"]:
+                    return False
+
+                task["completed"] = True
+                return True
+
         return False
-
-    for task in self.tasks:
-        if task["id"] == task_id:
-            if task["completed"]:
-                return False
-
-            task["completed"] = True
-            return True
-
-    return False
-
 
     def delete_task(self, task_id):
         if not isinstance(task_id, int) or task_id <= 0:
