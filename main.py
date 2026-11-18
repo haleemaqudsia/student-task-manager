@@ -35,11 +35,15 @@ while True:
             print("Task not found.")
 
     elif choice == "4":
-        task_id = int(input("Enter task ID: "))
-        if manager.delete_task(task_id):
-            print("Task deleted successfully!")
+        try:
+            task_id = int(input("Enter task ID: "))
+        except ValueError:
+            print("Please enter a valid numeric task ID.")
         else:
-            print("Task not found.")
+            if manager.delete_task(task_id):
+                print("Task deleted successfully!")
+            else:
+                print("Invalid ID or task not found.")
 
     elif choice == "5":
         print("Goodbye!")
