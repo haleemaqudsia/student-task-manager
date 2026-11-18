@@ -1,2 +1,2 @@
-Project status: In Development and Testing
+Project status: Planning
 # student-task-manager
