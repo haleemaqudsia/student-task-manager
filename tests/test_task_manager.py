@@ -22,3 +22,4 @@ class TestTaskManager(unittest.TestCase):
         self.assertTrue(self.manager.delete_task(task["id"]))
         self.assertEqual(self.manager.display_tasks(), [])
 
+
