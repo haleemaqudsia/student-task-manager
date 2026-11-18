@@ -13,13 +13,12 @@ while True:
     choice = input("Enter your choice: ")
 
     if choice == "1":
-    title = input("Enter task title: ")
-
-    try:
-        manager.add_task(title)
-        print("Task added successfully!")
-    except ValueError as error:
-        print(error)
+        title = input("Enter task title: ")
+        try:
+            manager.add_task(title)
+            print("Task added successfully!")
+        except ValueError as error:
+            print(error)
 
     elif choice == "2":
         tasks = manager.display_tasks()
