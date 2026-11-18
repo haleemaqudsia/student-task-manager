@@ -23,9 +23,13 @@ class TaskManager:
                 return True
         return False
 
-    def delete_task(self, task_id):
-        for task in self.tasks:
+        def delete_task(self, task_id):
+        if not isinstance(task_id, int) or task_id <= 0:
+            return False
+
+        for index, task in enumerate(self.tasks):
             if task["id"] == task_id:
-                self.tasks.remove(task)
+                del self.tasks[index]
                 return True
+
         return False
