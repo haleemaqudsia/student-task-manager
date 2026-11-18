@@ -1,6 +1,2 @@
-<<<<<<< HEAD
-Project status: In Development
-=======
-Project status: In Testing
->>>>>>> conflict/testing
+Project status: In Development and Testing
 # student-task-manager
