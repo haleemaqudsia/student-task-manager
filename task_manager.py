@@ -23,7 +23,7 @@ class TaskManager:
                 return True
         return False
 
-        def delete_task(self, task_id):
+    def delete_task(self, task_id):
         if not isinstance(task_id, int) or task_id <= 0:
             return False
 
